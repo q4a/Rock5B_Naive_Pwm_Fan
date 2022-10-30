@@ -13,13 +13,13 @@ while true
 do
 	a=`cat /sys/class/thermal/thermal_zone0/temp`
 	time=`date`
-	pwm=`echo ${a} | awk '{printf("%d",$1*0.08-800)}'`
+	pwm=`echo ${a} | awk '{printf("%d",$1*0.1-1300)}'`
 	if (( $pwm > 6500 ))
 	then
 		pwm=6500
-	elif (( $pwm < 2500 ))
+	elif (( $pwm < 2800 ))
 	then
-		pwm=2500
+		pwm=2800
 	fi
 	echo ${pwm} > /sys/devices/platform/fd8b0010.pwm/pwm/pwmchip*/pwm0/duty_cycle
 	echo [${time}] Thermal value: ${a}, write fan PWM cycle ${pwm}
