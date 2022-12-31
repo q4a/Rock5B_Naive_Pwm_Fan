@@ -11,10 +11,12 @@ For official fan from allnet installed on Rock Pi 5 Model B
 1. Start service: `systemctl start fan_pwm`
 1. Enable service to start after boot: `systemctl enable fan_pwm`
 ```
-  cp fan_pwm /usr/local/bin/
-  sudo chmod +x /usr/local/bin/fan_pwm
-  cp fan_pwm.service /etc/systemd/system/.
-  systemctl daemon-reload
-  systemctl start fan_pwm
-  systemctl enable fan_pwm
+git clone https://github.com/FantasyGmm/Rock5B_Pwm_Fan
+cd Rock5B_Pwm_Fan
+cp fan_pwm /usr/local/bin/
+sudo chmod +x /usr/local/bin/fan_pwm
+cp fan_pwm.service /etc/systemd/system/.
+systemctl daemon-reload
+systemctl start fan_pwm
+systemctl enable fan_pwm
 ```
