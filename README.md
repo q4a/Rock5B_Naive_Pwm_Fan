@@ -19,4 +19,5 @@ cp fan_pwm.service /etc/systemd/system/.
 systemctl daemon-reload
 systemctl start fan_pwm
 systemctl enable fan_pwm
+cd ..
 ```
